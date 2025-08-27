@@ -1,0 +1,86 @@
+@use '/resources/scss/common/variables';
+
+.about {
+    &_container{
+        position: relative;
+
+        .about-img{
+            width: 619px;
+            height: 619px;
+            position: absolute;
+            right: -146px;
+            top: 50px;
+            background: no-repeat 0 0/contain url("/public/images/about-ellipse.svg");
+            z-index: -1;
+
+            img{
+            }
+        }
+    }
+    &_content{
+        width: 1040px;
+    }
+    &-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 36px;
+        padding-right: 50px;
+
+        &_item{
+            position: relative;
+
+            &-ttl{
+                mask-image: url("/public/images/about-item-mask.png");
+                mask-repeat: no-repeat;
+                mask-size: 100% 100%;
+                background: #44A300;
+                min-height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 136%;
+                color: #FFFFFF;
+                //border-radius: 66px;
+                padding-right: 40px;
+                white-space: nowrap;
+            }
+
+            span{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: #44A300;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &_item:nth-child(2),
+        &_item:nth-child(6){
+            .about-list_item-ttl{
+                background: #3A8A01;
+            }
+            span{
+                background: #3A8A01;
+            }
+        }
+
+        &_item:nth-child(3),
+        &_item:nth-child(4){
+            .about-list_item-ttl{
+                background: #2B5E07;
+            }
+            span{
+                background: #2B5E07;
+            }
+        }
+
+    }
+}
+

@@ -1,0 +1,248 @@
+@use 'mixins';
+@use 'variables';
+
+// Обнуление стилей
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+.fancybox-slide--html {
+    padding: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    @include mixins.Container
+}
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.wrapper.page-content footer {
+    margin-top: 60px;
+}
+
+body {
+    font-family: variables.$FontFamily;
+    color: variables.$MainColorText;
+}
+
+html.lock {
+    overflow: hidden;
+}
+section{
+    padding: 90px 0;
+}
+
+h1 {
+    font-family: variables.$TitleFontFamily;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: variables.$TitleFontFamily;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 147%;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-family: variables.$FontFamily;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-family: variables.$FontFamily;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 10px;
+
+}
+
+h5 {
+    font-family: variables.$FontFamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-family: variables.$FontFamily;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+p {
+    font-family: variables.$FontFamily;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 24px;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+.select-btn,
+.compare-btn{
+    width: 48px;
+    height: 48px;
+    background:  #EBEBEB;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &.active svg{
+        fill: variables.$AdditionalColorText;
+    }
+    &.active svg path{
+        stroke: variables.$AdditionalColorText;
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: variables.$FontFamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: #000;
+        margin-bottom: 24px;
+    }
+}

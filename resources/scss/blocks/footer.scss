@@ -1,0 +1,125 @@
+@use '/resources/scss/common/variables';
+
+.footer {
+    background: variables.$MainColorText;
+    color: #FFFFFF;
+
+
+    &_top{
+        padding: 82px 0 44px;
+        display: flex;
+        gap: 160px;
+    }
+    &__contacts{
+        flex: 0 0 221px;
+        .logo{
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        h6{
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 29px;
+        }
+    }
+
+    &_bottom{
+        border-top: 1px solid #373737;
+        padding: 33px 0 57px;
+
+        &-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20.48px;
+        }
+    }
+}
+
+.footer-phone,
+.footer-email{
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    margin-bottom: 32px;
+    svg {
+        width: 19px;
+        flex-shrink: 0;
+    }
+
+}
+.footer-menu{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        > li > a{
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+    &_catalog{
+        .menu{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 120px;
+
+            > li > a{
+                display: block;
+                font-weight: 600;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-bottom: 17px;
+            }
+
+            .sub-menu{
+                font-weight: 400;
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+        }
+
+    }
+}
+.footer-contur {
+    width: 234px;
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+        .contur-link {
+            font-size: 14px;
+            font-family: variables.$FontFamily;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .contur-link:hover {
+            color: gray;
+        }
+
+        .contur-link:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__right {
+    }
+}

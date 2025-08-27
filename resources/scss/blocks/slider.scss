@@ -1,0 +1,72 @@
+@use '/resources/scss/common/variables';
+
+.main-slider {
+    background: no-repeat 0 0/cover url("/public/images/banner-bg.jpg");
+    &__item {
+        position: relative;
+        min-height: 859px;
+        width: 100%;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+
+        &-content{
+            position: relative;
+            //padding: 225px 0;
+
+            &-text{
+                width: 556px;
+
+                h2{
+                    font-family: variables.$TitleFontFamily;
+                    font-weight: 600;
+                    font-size: 75px;
+                    line-height: 150%;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    font-family: variables.$FontFamily;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 137%;
+                }
+            }
+
+            &-img{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 694px;
+                width: 904px;
+                height: 598px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+            }
+        }
+    }
+}
+.main-slider__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+    z-index: 2;
+
+    span{
+        width: 64px;
+        height: 4px;
+        background: #FFFFFF;
+        opacity: .2;
+        cursor: pointer;
+    }
+    .swiper-pagination-bullet-active{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,76 @@
+@use "/resources/scss/common/variables";
+
+.solutions{
+    background: #2C2C2C;
+    color: #FFFFFF;
+    position: relative;
+    min-height: 832px;
+
+    &_img{
+        width: 658px;
+        height: 582px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        img{
+            width: 100%;
+        }
+    }
+
+    h2{
+        max-width: 1257px;
+    }
+    &_container{
+        position: relative;
+        z-index: 1;
+    }
+    &_content{
+        padding-left: 500px;
+    }
+
+    &_info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 31px;
+        margin-bottom: 49px;
+
+        div{
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 140%;
+        }
+        p{
+            font-size: 18px;
+
+        }
+    }
+    &_list{
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 0;
+
+            li{
+                background: rgba(130, 130, 130, 0.26);
+                border-radius: 20px;
+                padding: 20px 27px 20px 77px;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: normal;
+                position: relative;
+
+                &:before{
+                    content: '';
+                    width: 35px;
+                    height: 35px;
+                    background: no-repeat 0 0/contain url("/public/images/solutions-list-icon.svg");
+                    position: absolute;
+                    top: 20px;
+                    left: 27px;
+                }
+
+            }
+        }
+    }
+}

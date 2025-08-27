@@ -1,0 +1,39 @@
+@use "/resources/scss/common/variables";
+
+.advantages {
+    margin-top: 54px;
+
+    &_list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+        padding-right: 390px;
+
+        &-item{
+            background: #EBEBEB;
+            padding: 25px;
+            border-radius: 20px;
+
+
+            span{
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background:  #535353;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 120%;
+                color: #FFFFFF;
+            }
+
+            p{
+                color: #535353;
+            }
+        }
+    }
+
+}

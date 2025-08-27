@@ -1,0 +1,71 @@
+@use '/resources/scss/common/variables';
+
+.categories {
+    background: #EBEBEB;
+}
+
+.categories-list {
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    row-gap: 40px;
+}
+.categories-item {
+    position: relative;
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        mask-image: url('/public/images/catalog-mask.png');
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        background-color: #fff;
+        padding: 40px 40px 16px 40px;
+    }
+    &__title {
+        max-width: 311px;
+        font-family: variables.$TitleFontFamily;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 144%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-height: 242px;
+        min-height: 218px;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            //width: 100%;
+            //height: 100%;
+            //object-fit: cover;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__img:hover {
+        img {
+            scale: 1.1;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+

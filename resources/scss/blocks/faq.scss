@@ -1,0 +1,283 @@
+@use '/resources/scss/common/variables';
+
+
+.faq {
+}
+.faq-container {
+}
+.container {
+}
+.faq-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .faq-btn {
+        display: block;
+        padding: 10px 30px;
+        color: #FFF;
+        font-family: variables.$FontFamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 2px;
+        background: #374FC7;
+        cursor: pointer;
+    }
+}
+
+
+
+#feedback-popup {
+    width: 420px;
+}
+.feedback-popup {
+		&__heading {
+            font-family: variables.$FontFamily;
+            font-size: 24px;
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            color: #111827;
+            margin-bottom: 44px;
+		}
+
+		&__content {
+            .feedback-btn {
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+                border: 0;
+                outline: 0;
+                color: #FFF;
+                background-color: #374FC7;
+                cursor: pointer;
+            }
+		}
+
+		&__item {
+            margin-bottom: 24px;
+            label {
+                display: block;
+                font-family: variables.$FontFamily;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                color: #374151;
+                margin-bottom: 8px;
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 13px 16px;
+                color: variables.$MainColorText;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: variables.$FontFamily;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                outline: 0;
+                border-radius: 2px;
+                border: 1px solid rgba(170, 170, 170, 0.81);
+                background: #FFF;
+            }
+
+            textarea {
+                min-height: 95px;
+                resize: none;
+            }
+		}
+}
+
+.feedback-popup__privacy {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #535353;
+
+    .checkbox-error{
+        position: absolute;
+        top: 90%;
+        left: 0;
+    }
+
+    .checkbox-wrap{
+        width: 20px;
+        flex-shrink: 0;
+
+        label{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //display: block;
+            width: 24px;
+            height: 24px;
+            border: 1px solid variables.$AdditionalColorText;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="checkbox"]{
+            width: 0;
+            height: 0;
+        }
+        span{
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: variables.$time;
+        }
+        input[type="checkbox"]:checked~span{
+
+            background: variables.$AdditionalColorText;
+            opacity: 1;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-offset: 19%;
+        text-decoration-thickness: 7%;
+    }
+}
+.feedback{
+    background: #EBEBEB;
+
+    &_container{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &_right{
+        width: 50%;
+        position: relative;
+        min-height: 420px;
+        padding-top: 27px;
+
+        &-text{
+            width: 400px;
+            padding: 24px 15px 23px 25px;
+            background: variables.$AdditionalColorText;
+            border-radius: 20px;
+            color: #FFFFFF;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        &-img{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+    &-form{
+        max-width: 761px;
+
+        .form-label{
+            display: none;
+        }
+        .feedback-popup__items{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+
+        }
+
+        .feedback-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            background: #191919;
+            padding: 14px 38px;
+            width: max-content;
+        }
+    }
+
+    h2{
+        margin-bottom: 24px;
+        span{
+            color: variables.$AdditionalColorText;
+        }
+    }
+}
+.faq-content {
+    display: grid;
+    margin-bottom: 40px;
+}
+.faq-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+.faq-item {
+    display: flex;
+    padding: 32px 50px;
+    width: 70%;
+
+		&__ico {
+            flex: 0 0 42px;
+            margin-right: 32px;
+		}
+
+		&__text {
+            flex: 1 1 auto;
+		}
+
+		&__title {
+            color: #000;
+            font-family: variables.$FontFamily;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 16px;
+		}
+
+        &__description {
+            color: #333;
+            font-family: variables.$FontFamily;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 145%;
+        }
+}
+.question {
+    justify-self: start;
+    background: #D1D5DB;
+    border-radius: 2px;
+}
+.answer {
+    justify-self: end;
+    border-radius: 2px;
+    border: 1px solid #374FC7;
+    background: #FFF;
+
+    .faq-item__ico {
+        order: 2;
+        margin-right: 0;
+        margin-left: 32px;
+    }
+
+    .faq-item__text {
+        order: 1;
+    }
+}
