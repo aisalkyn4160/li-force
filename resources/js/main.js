@@ -246,22 +246,25 @@ $(function () {
 
     const productSliderNav = new Swiper('.product-slider_navigate', {
         slidesPerView: 5,
-        spaceBetween: 24,
-        freeMode: true,
-        watchSlidesProgress: true,
+        spaceBetween: 19,
+        // freeMode: true,
+        // watchSlidesProgress: true,
+        direction: "vertical",
+        // loop: true,
 
-        breakpoints: {
-            // when window width is >= 320px
-            320: {
-                slidesPerView: 3,
-            },
-            576: {
-                slidesPerView: 4,
-            }
-        }
+        // breakpoints: {
+        //     // when window width is >= 320px
+        //     320: {
+        //         slidesPerView: 3,
+        //     },
+        //     576: {
+        //         slidesPerView: 4,
+        //     }
+        // }
     });
     const productSliderMain = new Swiper('.product-slider_main', {
         spaceBetween: 15,
+        // loop: true,
         thumbs: {
             swiper: productSliderNav,
         },
