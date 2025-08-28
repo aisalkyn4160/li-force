@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import {Navigation, Pagination, Controller, EffectFade, Autoplay} from 'swiper/modules';
+import {Navigation, Pagination, Controller, EffectFade, Autoplay, Thumbs} from 'swiper/modules';
 
-Swiper.use([Navigation, Pagination, Controller, EffectFade, Autoplay]);
+Swiper.use([Navigation, Pagination, Controller, EffectFade, Autoplay, Thumbs]);
 
 import 'jquery-ui';
 import "jquery-ui/ui/widgets/mouse";
@@ -242,29 +242,14 @@ $(function () {
 })
 
 $(function () {
-    const productSliderMain = new Swiper('.product-slider_main', {
-        speed: 400,
-        spaceBetween: 15,
-        loop: true,
-        loopedSlides: 4,
-        // navigation: {
-        //     nextEl: '.main-slider__next',
-        //     prevEl: '.main-slider__perv',
-        // },
-    });
+
 
     const productSliderNav = new Swiper('.product-slider_navigate', {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 24,
-        speed: 400,
-        touchRatio: 0.2,
-        slideToClickedSlide: true,
-        loop: true,
-        loopedSlides: 4,
-        navigation: {
-            nextEl: '.product-next',
-            prevEl: '.product-prev',
-        },
+        freeMode: true,
+        watchSlidesProgress: true,
+
         breakpoints: {
             // when window width is >= 320px
             320: {
@@ -275,9 +260,23 @@ $(function () {
             }
         }
     });
+    const productSliderMain = new Swiper('.product-slider_main', {
+        spaceBetween: 15,
+        thumbs: {
+            swiper: productSliderNav,
+        },
+        navigation: {
+            nextEl: '.product-next',
+            prevEl: '.product-prev',
+        },
+        // navigation: {
+        //     nextEl: '.main-slider__next',
+        //     prevEl: '.main-slider__perv',
+        // },
+    });
 
-    productSliderMain.controller.control = productSliderNav;
-    productSliderNav.controller.control = productSliderMain;
+    // productSliderMain.controller.control = productSliderNav;
+    // productSliderNav.controller.control = productSliderMain;
 })
 
 $(function () {

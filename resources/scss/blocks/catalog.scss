@@ -409,21 +409,6 @@
     display: flex;
     flex-direction: column;
 
-    .product-tag{
-        padding: 6px 10px;
-        font-weight: 400;
-        font-size: 12px;
-        //letter-spacing: 5%;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background: #2B9FDE;
-        width: max-content;
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        z-index: 1;
-    }
-
     &__img {
         display: block;
         position: relative;
@@ -524,6 +509,21 @@
             //cursor: pointer;
         }
     }
+}
+
+.product-tag{
+    padding: 6px 10px;
+    font-weight: 400;
+    font-size: 12px;
+    //letter-spacing: 5%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #2B9FDE;
+    width: max-content;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
 }
 
 .products-filter__btn_mobile {
