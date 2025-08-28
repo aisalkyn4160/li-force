@@ -106,12 +106,14 @@ html.lock {
 section{
     padding: 90px 0;
 }
-
+.page-content section{
+    padding: 0;
+}
 h1 {
     font-family: variables.$TitleFontFamily;
     font-weight: 600;
     font-size: 75px;
-    line-height: 150%;
+    line-height: 147%;
     text-transform: uppercase;
     margin-bottom: 20px;
 }

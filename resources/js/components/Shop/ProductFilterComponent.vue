@@ -1,31 +1,5 @@
 <template>
     <form action="#">
-        <div class="products-filter__item">
-            <div class="products-filter__name">
-                <div class="products-filter__text">Цена</div>
-                <div class="products-filter__arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                         viewBox="0 0 20 20" fill="none">
-                        <path d="M15.8346 7.4987L10.0013 13.332L4.16797 7.4987" stroke="#374151"
-                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="products-filter__content">
-                <div class="filter-inpt">
-                    <div id="slider-price"></div>
-                    <div class="slider-price-inputs">
-                        <div class="slider-price-inputs-item">
-                            <input class="price-inputs-start" v-model="price.min" type="number" name="price-start">
-                        </div>
-                        <div class="slider-price-inputs-item">
-                            <input class="price-inputs-end" v-model="price.max" type="number" name="price-end">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="products-filter__item" v-if="filterableAttributes" v-for="attribute in filterableAttributes">
             <div class="products-filter__content" v-if="attribute.data.length > 0">
                 <MultiSelectField v-if="attribute.type == 'multi_select'" :data="attribute.data"
@@ -40,8 +14,8 @@
             </div>
         </div>
         <div class="products-filter__btns">
-            <button type="reset" @click="resetFilter">Сбросить</button>
             <button type="button" @click="filterData">Применить</button>
+            <button type="reset" @click="resetFilter" class="reset-btn">Сбросить все фильтры</button>
         </div>
     </form>
 </template>

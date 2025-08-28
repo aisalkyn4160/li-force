@@ -83,6 +83,9 @@
                 text-transform: uppercase;
                 margin-bottom: 17px;
             }
+            .has-sub-menu-arrow{
+                display: none;
+            }
 
             .sub-menu{
                 font-weight: 400;
@@ -90,6 +93,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 14px;
+
+                li{
+                    svg{
+                        display: none;
+                    }
+                }
             }
         }
 

@@ -13,6 +13,8 @@
 }
 
 .header {
+    box-shadow: 0px 1px 10.5px 0px #00000012;
+
     &_top {
         background-color: variables.$MainColorText;
         //padding: 9px 0 12px;

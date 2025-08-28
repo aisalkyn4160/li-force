@@ -2,12 +2,16 @@
 
 .products {
     &-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 32px;
+        margin-bottom: 40px;
+
         h1 {
             margin-bottom: 0;
+        }
+        p{
+            max-width: 1156px;
+            font-weight: 500;
+            font-size: 18px;
+            color: #535353;
         }
     }
 }
@@ -24,11 +28,11 @@
     justify-content: space-between;
 
 		&_left {
-            flex: 0 0 230px;
+            flex: 0 0 356px;
 		}
 
 		&_right {
-            flex: 0 0 calc(100% - 270px);
+            flex: 0 0 calc(100% - 380px);
 		}
 }
 .products-menu {
@@ -90,7 +94,8 @@
 .arrow {
 }
 .products-sorter {
-    display: flex;
+    display: none;
+    //display: flex;
     column-gap: 24px;
     margin-bottom: 32px;
 
@@ -116,27 +121,27 @@
 }
 
 .products-filter {
+    background: #F8F8F8;
+    border-radius: 20px;
 
     &__head {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
+        padding: 15px 23px;
+        border-bottom: 1px solid #CCCCCC;
     }
 
     &__heading {
-        color: #1C2864;
-        font-family: variables.$FontFamily;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        font-weight: 700;
+        font-size: 20px;
     }
 
     &__body {
-        display: none;
+        //display: none;
     }
 
     &__item {
+        padding: 25px;
+        border-bottom: 1px solid #D6D6D6;
+
         &__arrow {
             display: flex;
             justify-content: center;
@@ -148,10 +153,6 @@
         &__arrow.active {
             transform: rotate(180deg);
         }
-    }
-
-    &__item:not(:last-child) {
-        margin-bottom: 30px;
     }
 
     &__name {
@@ -170,7 +171,7 @@
     }
 
     &__content {
-        padding-top: 20px;
+        //padding-top: 20px;
     }
 }
 
@@ -195,7 +196,20 @@
         transform: rotate(180deg);
     }
 }
+.products-filter-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 30px;
 
+    &__item{
+        font-weight: 700;
+        font-size: 18px;
+        background:  #F8F8F8;
+        padding: 16px 35px;
+    }
+
+}
 .slider-price-inputs {
     margin-top: 20px;
 }
@@ -235,11 +249,13 @@
     }
 }
 
-.products-filter__category:not(:last-child) {
-    margin-bottom: 16px;
-}
+//.products-filter__category:not(:last-child) {
+//    margin-top: 11px;
+//}
 
 .products-filter__category {
+    display: none;
+    margin-top: 11px;
 
     input {
         display: none;
@@ -247,8 +263,12 @@
 
     label {
         position: relative;
-        padding-left: 32px;
+        padding-left: 37px;
         cursor: pointer;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #151515;
     }
 
     label::before {
@@ -256,29 +276,31 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #D1D5DB;
-        border-radius: 5px;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #93999E;
+        border-radius: 4px;
         transition: all 0.3s ease;
     }
 
     input:checked + label::before {
-        background: #1C2864;
+        background: variables.$MainColorText;
         border: 0;
     }
 
     input:checked + label::after {
         content: "";
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: 6px;
+        left: 5px;
         width: 20px;
         height: 20px;
         background: url(/resources/images/filter-checkmark.svg) no-repeat;
     }
 }
-
+.products-filter__category:first-child {
+    margin-top: 17px;
+}
 .products-filter__content.round {
     label::before {
         content: "";
@@ -342,29 +364,31 @@
 }
 
 .products-filter__btns {
-    margin-top: 60px;
+    padding: 25px;
+
     button {
-        font-family: variables.$FontFamily;
         font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: normal;
-        padding: 10px;
+        padding: 15px;
         width: 100%;
         border: 0;
-        border-radius: 2px;
-        color: #374FC7;
-        border: 1px solid #374FC7;
-        background: #FFF;
+        border-radius: 4px;
+        color: #FFFFFF;
+        background: variables.$AdditionalColorText;
         cursor: pointer;
         transition: all 0.3s ease;
     }
 
     button:hover {
-        background: #374FC7;
-        color: #FFF;
+        //background:;
+        //color: #FFF;
     }
-
+    .reset-btn{
+        color: variables.$MainColorText;
+        border: 1px solid #EBEBEB;
+        background-color: transparent;
+    }
     button:not(:last-child) {
         margin-bottom: 15px;
     }
@@ -372,18 +396,40 @@
 
 
 .products-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -7px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 .products-item {
-    margin: 0 7px 14px;
-    flex: 0 0 calc(25% - 14px);
+    box-shadow: 0px 1px 4px 0px #00000040;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .product-tag{
+        padding: 6px 10px;
+        font-weight: 400;
+        font-size: 12px;
+        //letter-spacing: 5%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: #2B9FDE;
+        width: max-content;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        z-index: 1;
+    }
+
     &__img {
         display: block;
         position: relative;
         width: 100%;
-        height: 250px;
+        aspect-ratio: 305/240;
+        //height: 250px;
         overflow: hidden;
 
         img {
@@ -399,79 +445,83 @@
 
     &__img:hover {
         img {
-            scale: 1.2;
+            scale: 1.1;
         }
     }
 
     &__content {
-        padding: 8px 10px 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     &__price {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         margin-bottom: 8px;
+        margin-top: auto;
 
         &_new {
-            margin-right: 15px;
-            font-family: variables.$FontFamily;
+            margin-right: 12px;
             font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
+            font-weight: 800;
             line-height: normal;
-            color: variables.$SecondColorText;
+            color: variables.$AdditionalColorText;
         }
 
         &_old {
-            font-family: variables.$FontFamily;
             font-size: 16px;
-            font-style: normal;
             font-weight: 400;
             line-height: normal;
             text-decoration: line-through;
-            color: #6B7280;
+            color: #535353;
         }
     }
 
     &__title {
-        margin-bottom: 35px;
-        font-family: variables.$FontFamily;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%;
-        height: 48px;
-        overflow: hidden;
-        color: variables.$MainColorText;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 8px;
 
         a {
+            font-weight: 600;
+            font-size: 18px;
             transition: all 0.3s ease;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     }
 
     &__title a:hover {
         color: variables.$AdditionalColorText;
     }
-
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
     &__btn {
+        height: 48px;
+        flex-grow: 1;
         display: block;
         text-align: center;
         padding: 10px;
         font-size: 16px;
-        font-family: variables.$FontFamily;
-        font-style: normal;
         font-weight: 400;
         line-height: normal;
-        border-radius: 2px;
+        border-radius: 4px;
         border: 1px solid variables.$AdditionalColorText;
-        background: #FFF;
-        color: variables.$AdditionalColorText;
+        background: variables.$AdditionalColorText ;
+        color: #FFF;
         transition: all 0.3s ease;
 
         &:hover {
-            color: variables.$MainColorText;
-            border-color: variables.$MainColorText;
-            cursor: pointer;
+            //color: variables.$MainColorText;
+            //border-color: variables.$MainColorText;
+            //cursor: pointer;
         }
     }
 }

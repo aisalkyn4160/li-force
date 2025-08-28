@@ -1,6 +1,8 @@
 <template>
     <div class="select" v-click-outside="hideOptions">
-        <div class="filter-label">{{ label }}</div>
+        <div class="filter-label">
+            {{ label }}
+        </div>
         <div class="select-item">
             <div class="select-head" @click="showOptions">
                 <div v-if="selectedItems">
